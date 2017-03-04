@@ -11,7 +11,7 @@ wwsh provision => node provisioning attributes (set, list, print)
 wwsh vnfs      => mange vnfs images (import, export, delete, list, set)
 ```
 
-```sh
+
 https://github.com/nicksan2c/wwsh/blob/master/wwsh-bootstrap.txt
 https://github.com/nicksan2c/wwsh/blob/master/wwsh-file.txt
 https://github.com/nicksan2c/wwsh/blob/master/wwsh-ipmi.txt
@@ -19,4 +19,4 @@ https://github.com/nicksan2c/wwsh/blob/master/wwsh-node.txt
 https://github.com/nicksan2c/wwsh/blob/master/wwsh-object.txt
 https://github.com/nicksan2c/wwsh/blob/master/wwsh-provision.txt
 https://github.com/nicksan2c/wwsh/blob/master/wwsh-vnfs.txt
-```
+
