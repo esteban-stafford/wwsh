@@ -1,0 +1,21 @@
+[root@redplanet ~]# wwsh output help
+USAGE:
+     output [command]
+
+SUMMARY:
+    This command sets the desired command output verbosity level.
+
+COMMANDS:
+
+         normal          The standard (and default) output level intended for
+                         normal usage
+         quiet           Only print warning, error, or critical messages.
+         verbose         Increase verbosity over the normal output level
+         debug           Show debugging messages (very verbose)
+
+EXAMPLES:
+
+     Warewulf> output verbose
+     Warewulf> output normal
+
+[root@redplanet ~]# 

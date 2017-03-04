@@ -1,0 +1,32 @@
+[root@redplanet ~]# wwsh pxe 
+ERROR:  You must provide a command!
+
+USAGE:
+     pxe <command> [options] [targets]
+
+SUMMARY:
+        Manage PXE configuration.
+
+COMMANDS:
+
+         update          Update the PXE configuration
+         help            Show usage information
+
+TARGETS:
+
+     The target is the specification for the node you wish to act on. All targets
+     can be bracket expanded as follows:
+
+         n00[0-99]       inclusively all nodes from n0000 to n0099
+         n00[00,10-99]   n0000 and inclusively all nodes from n0010 to n0099
+
+OPTIONS:
+
+     -l, --lookup        How should we reference this node? (default is name)
+
+EXAMPLES:
+
+     Warewulf> pxe update
+     Warewulf> pxe update n000[0-4]
+
+[root@redplanet ~]# 

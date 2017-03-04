@@ -1,0 +1,28 @@
+[root@redplanet ~]# wwsh bootstrap help
+USAGE:
+     bootstrap <command> [options] [targets]
+
+SUMMARY:
+     This interface allows you to manage your bootstrap images within the Warewulf
+     data store.
+
+COMMANDS:
+
+         import          Import a bootstrap image into Warewulf
+         export          Export a bootstrap image to the local file system
+         delete          Delete a bootstrap image from Warewulf
+         list            Show all of the currently imported bootstrap images
+         (re)build       Build (or rebuild) the tftp bootable image(s) on this host
+         help            Show usage information
+
+OPTIONS:
+
+     -n, --name      When importing a bootstrap use this name instead of the file name
+
+EXAMPLES:
+
+     Warewulf> bootstrap import /path/to/name.wwbs --name=bootstrap
+     Warewulf> bootstrap export bootstrap1 bootstrap2 /tmp/exported_bootstrap/
+     Warewulf> bootstrap list
+
+[root@redplanet ~]# 

@@ -1,0 +1,60 @@
+[root@redplanet ~]# wwsh node help
+USAGE:
+     node <command> [options] [targets]
+
+SUMMARY:
+     The node command is used for viewing and manipulating node objects.
+
+COMMANDS:
+         new             Create a new node configuration
+         set             Modify an existing node configuration
+         list            List a summary of nodes
+         print           Print the node configuration
+         delete          Remove a node configuration from the data store
+         clone           Clone a node configuration to another node
+         help            Show usage information
+
+TARGETS:
+     The target(s) specify which node(s) will be affected by the chosen
+     action(s).  By default, node(s) will be identified by their name(s).
+     Use the --lookup option to specify another property (e.g., "hwaddr"
+     or "groups").
+
+     All targets can be bracket expanded as follows:
+
+         n00[0-99]       All nodes from n0000 through n0099 (inclusive)
+         n00[00,10-99]   n0000 and all nodes from n0010 through n0099
+
+OPTIONS:
+     -l, --lookup        Identify nodes by specified property (default: "name")
+     -g, --groups        Specify all groups to which this node belongs
+         --groupadd      Add node to specified group(s)
+         --groupdel      Remove node from specified group(s)
+     -D, --netdev        Specify network device to add or modify (defaults: eth0)
+         --netdel        Remove specified netdev from node
+         --netrename     Rename a given network interface
+     -I, --ipaddr        Set IP address of given netdev
+     -M, --netmask       Set subnet mask of given netdev
+     -N, --network       Set network address of netdev
+     -G, --gateway       Set gateway of given netdev
+     -H, --hwaddr        Set hardware/MAC address
+     -f, --fqdn          Set FQDN of given netdev
+     -m, --mtu           Set MTU of given netdev
+     -p, --hwprefix      Specify a prefix for hardware/MAC address of a given netdev
+     -c, --cluster       Specify cluster name for this node
+         --domain        Specify domain name for this node
+     -n, --name          Specify new name for this node
+     -e, --enabled       Set whether the node is enabled (defaults: True)
+
+EXAMPLES:
+     Warewulf> node new n0000 --netdev=eth0 --hwaddr=xx:xx:xx:xx:xx:xx
+     Warewulf> node set n0000 -D eth0 -I 10.0.0.10 -G 10.0.0.1
+     Warewulf> node set n0000 --netdev=eth0 --netmask=255.255.255.0
+     Warewulf> node set --groupadd=mygroup,hello,bye --cluster=mycluster n0000
+     Warewulf> node set --groupdel=bye --set=vnfs=sl6.vnfs
+     Warewulf> node list xx:xx:xx:xx:xx:xx --lookup=hwaddr
+     Warewulf> node print --lookup=groups mygroup hello group123
+     Warewulf> node clone n0000 new0000
+     Warewulf> node set --enabled=false n0000
+
+[root@redplanet ~]# 

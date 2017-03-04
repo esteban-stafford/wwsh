@@ -1,0 +1,33 @@
+[root@redplanet ~]# wwsh vnfs help
+USAGE:
+     vnfs <command> [options] [targets]
+
+SUMMARY:
+     This interface allows you to manage your VNFS images within the Warewulf
+     data store.
+
+COMMANDS:
+
+         import          Import a VNFS image into Warewulf
+         export          Export a VNFS image to the local file system
+         delete          Delete a VNFS image from Warewulf
+         list            Show all of the currently imported VNFS images
+         set             Set any VNFS attributes
+         help            Show usage information
+
+TARGETS:
+
+     The target is the specification for the VNFS you wish to operate on.
+
+OPTIONS:
+
+     -n, --name          When importing a VNFS use this name instead of the file name
+     -c, --chroot        Define the location of the template chroot
+
+EXAMPLES:
+
+     Warewulf> vnfs import /path/to/name.vnfs --name=vnfs1
+     Warewulf> vnfs export vnfs1 vnfs2 /tmp/exported_vnfs/
+     Warewulf> vnfs list
+
+[root@redplanet ~]# 

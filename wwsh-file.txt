@@ -1,0 +1,46 @@
+[root@redplanet ~]# wwsh file help
+USAGE:
+     file <command> [options] [targets]
+
+SUMMARY:
+     The file command is used for manipulating file objects.  It allows you to
+     import, export, create, and modify files within the Warewulf data store.
+     File objects may be used to supply files to nodes at provision time,
+     dynamically create files or scripts based on Warewulf data and more.
+
+COMMANDS:
+     import             Import a file into a file object
+     export             Export file object(s)
+     edit               Edit the file in the data store directly
+     new                Create a new file in the data store
+     set                Set file attributes/metadata
+     show               Show the contents of a file
+     list               List a summary of imported file(s)
+     print              Print all file attributes
+     (re)sync           Sync the data of a file object with its source(s)
+     delete             Remove a node configuration from the data store
+     help               Show usage information
+
+OPTIONS:
+     -l, --lookup       Identify files by specified property (default: "name")
+     -p, --program      What external program should be used (edit/show)
+     -D, --path         Set destination (i.e., output) path for this file
+     -o, --origin       Set origin (i.e., input) path for this file
+     -m, --mode         Set permission attribute for this file
+     -u, --uid          Set the UID for this file
+     -g, --gid          Set the GID for this file
+     -n, --name         Set the reference name for this file (not path!)
+         --interpreter  Set the interpreter name to parse this file
+
+NOTE:  Use "UNDEF" to erase the current contents of a given field.
+
+EXAMPLES:
+     Warewulf> file import /path/to/file/to/import --name=hosts-file
+     Warewulf> file import /path/to/file/to/import/with/given-name
+     Warewulf> file edit given-name
+     Warewulf> file set given-name --origin=UNDEF --mode=0700
+     Warewulf> file set hosts-file --path=/etc/hosts --mode=0644 --uid=0
+     Warewulf> file list
+     Warewulf> file delete name123 given-name
+
+[root@redplanet ~]# 

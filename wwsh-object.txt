@@ -1,0 +1,34 @@
+[root@redplanet ~]# wwsh object help
+USAGE:
+     object <command> [options] [targets]
+
+SUMMARY:
+     The object command provides an interface for generically manipulating all
+     object types within the Warewulf data store.
+
+COMMANDS:
+     modify          Add, delete, and/or set object member variables
+     print           Display object(s) and their members
+     delete          Completely remove object(s) from the data store
+     dump            Recursively dump objects in internal format
+     canonicalize    Check and update objects to current standard format
+     help            Show usage information
+
+OPTIONS:
+     -l, --lookup    Identify objects by specified property (default: "name")
+     -t, --type      Only operate on objects of the specified type
+     -p, --print     Specify which fields are printed (":all" for all)
+     -s, --set       Set a member variable (or "field")
+     -a, --add       Add value(s) to specified member array variable
+     -D, --del       Delete value(s) from specified member variable
+
+EXAMPLES:
+     Warewulf> object print -p :all
+     Warewulf> object print -p _id,name,_type
+
+WARNING:  This command is VERY POWERFUL.  It is primarily intended for
+developers and power users.  Please use CAREFULLY, if at all.  Data
+stores which are corrupted by misuse of this command may not be
+recoverable.  USE AT YOUR OWN RISK!
+
+[root@redplanet ~]# 

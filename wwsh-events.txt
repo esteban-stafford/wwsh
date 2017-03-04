@@ -1,0 +1,14 @@
+[root@redplanet ~]# wwsh events help
+USAGE:
+     events [command]
+
+SUMMARY:
+     Control how/if events are handled.
+
+COMMANDS:
+
+     enable          Enable all events for this shell (default)
+     disable         Disable the event handler
+     help            Show usage information
+
+[root@redplanet ~]# 

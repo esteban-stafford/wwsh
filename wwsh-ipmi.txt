@@ -1,0 +1,62 @@
+[root@redplanet ~]# wwsh ipmi help
+USAGE:
+     ipmi <command> [options] [targets]
+
+SUMMARY:
+    The ipmi command is used for setting node ipmi configuration attributes.
+
+COMMANDS:
+
+         set             Modify an existing node configuration
+         list            List a summary of the node(s) ipmi configuration
+         print           Print the full node(s) ipmi configuration
+         poweron         Power on the list of nodes
+         poweroff        Power off the list of nodes
+         powercycle      Power cycle the list of nodes
+         powerstatus     Print the power status of the nodes
+         ident           Set chassis identify light to on for the nodes
+         noident         Set chassis identify light to off for the nodes
+         printsel        Print system event log for the nodes
+         clearsel        Clear system event log for the nodes
+         printsdr        Print sensor data records for the nodes
+         console         Start a serial-over-lan console session.
+                         NOTE: Requires that a serial console be defined
+                         in kernel arguments, i.e. console=ttyS0,57600
+
+         forcepxe        Force next boot from PXE
+         forcedisk       Force next boot from first Hard Drive
+         forcecdrom      Force next boot from CD-ROM
+         forcebios       Force next boot into BIOS
+
+         help            Show usage information
+
+TARGETS:
+
+     The target is the specification for the node you wish to act on. All targets
+     can be bracket expanded as follows:
+
+         n00[0-99]       inclusively all nodes from n0000 to n0099
+         n00[00,10-99]   n0000 and inclusively all nodes from n0010 to n0099
+
+OPTIONS:
+
+     -l, --lookup        How should we reference this node? (default is name)
+         --ipaddr        The IPMI accessible IP address for this node. If multiple
+                         nodes are given, this IP address will be incremented for
+                         each node given
+         --netmask       The netmask defined for this node
+         --uid           The IPMI ID to use for the user on this node
+         --username      Define the IPMI username for this node
+         --password      Define the IPMI password for this node
+         --proto         Define the IPMI protocol for this node (defaults to lan)
+         --autoconfig    Automatically try and configure this node's IPMI settings
+                         on boot (boolean 1/0) - note: if no password is set for the
+                         node, one will be randomly generated
+     -d, --delay         Delay/pad the IPMI commands (very useful for throttling boots)
+     -f, --fanout        Change the fanout for parallel IPMI commands (default: 8)
+
+EXAMPLES:
+
+     Warewulf> ipmi set n000[0-4] --ipaddr=10.100.0.1 --netmask=255.255.255.0
+
+[root@redplanet ~]# 

@@ -1,0 +1,14 @@
+[root@redplanet ~]# wwsh dhcp help
+USAGE:
+     dhcp <command>
+
+SUMMARY:
+        The DHCP command configures/reconfigures the DHCP service.
+
+COMMANDS:
+
+         update          Update the DHCP configuration, and restart the service
+         restart         Restart the DHCP service
+         help            Show usage information
+
+[root@redplanet ~]# 

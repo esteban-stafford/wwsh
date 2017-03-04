@@ -1,0 +1,51 @@
+[root@redplanet ~]# wwsh provision help
+USAGE:
+     provision <command> [options] [targets]
+
+SUMMARY:
+    The provision command is used for setting node provisioning attributes.
+
+COMMANDS:
+
+         set             Modify an existing node configuration
+         list            List a summary of the node(s) provision configuration
+         print           Print the full node(s) provision configuration
+         help            Show usage information
+
+TARGETS:
+
+     The target is the specification for the node you wish to act on. All targets
+     can be bracket expanded as follows:
+
+         n00[0-99]       inclusively all nodes from n0000 to n0099
+         n00[00,10-99]   n0000 and inclusively all nodes from n0010 to n0099
+
+OPTIONS:
+
+     -l, --lookup        How should we reference this node? (default is name)
+     -b, --bootstrap     Define the bootstrap image that this node should use
+     -V, --vnfs          Define the VNFS that this node should use
+         --master        Specifically set the Warewulf master(s) for this node
+         --files         Define the files that should be provisioned to this node
+         --fileadd       Add a file to be provisioned to this node
+         --filedel       Remove a file to be provisioned to this node
+         --preshell      Start a shell on the node before provisioning (boolean)
+         --postshell     Start a shell on the node after provisioning (boolean)
+         --postnetdown   Shutdown the network after provisioning (boolean)
+         --bootlocal     Boot the node from the local disk ("exit" or "normal")
+         --console       Set a specific console for the kernel command line
+         --kargs         Define the kernel arguments (assumes "quiet" if UNDEF)
+         --pxelinux      Define a custom PXELINUX/boot image to use
+         --selinux       Boot node with SELinux support? (valid options are: UNDEF,
+                         ENABLED, and ENFORCED)
+
+EXAMPLES:
+
+     Warewulf> provision set n000[0-4] --bootstrap=2.6.30-12.x86_64
+     Warewulf> provision set n00[00-99] --fileadd=ifcfg-eth0
+     Warewulf> provision set -l=cluster mycluster --vnfs=rhel-6.0
+     Warewulf> provision set -l=group mygroup hello group123
+     Warewulf> provision set n00[0-4] --console=ttyS1,57600 --kargs="noacpi"
+     Warewulf> provision list n00[00-99]
+
+[root@redplanet ~]# 

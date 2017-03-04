@@ -1,0 +1,35 @@
+[root@redplanet ~]# wwsh mic help
+USAGE:
+     mic <command> [options] [targets]
+
+SUMMARY:
+     The mic command is used for viewing and manipulating Intel(R)
+     Xeon Phi(TM) settings on node objects.
+
+COMMANDS:
+         set             Modify existing settings
+         print           Print the node configuration
+         help            Show usage information
+
+TARGETS:
+     The target(s) specify which node(s) will be affected by the chosen
+     action(s).  By default, node(s) will be identified by their name(s).
+     Use the --lookup option to specify another property (e.g., "hwaddr"
+     or "groups").
+
+     All targets can be bracket expanded as follows:
+
+         n00[0-99]       All nodes from n0000 through n0099 (inclusive)
+         n00[00,10-99]   n0000 and all nodes from n0010 through n0099
+
+OPTIONS:
+     -l, --lookup        Identify nodes by specified property (default: "name")
+         --mic           Set the number of MIC devices on this node
+
+EXAMPLES:
+     Warewulf> mic set n0000 --mic=2
+     Warewulf> mic set n0000 --mic=0
+     Warewulf> mic set --lookup=groups phi2 --mic=2
+     Warewulf> mic print
+
+[root@redplanet ~]# 

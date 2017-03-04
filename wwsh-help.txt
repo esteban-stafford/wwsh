@@ -1,0 +1,24 @@
+[root@redplanet ~]# wwsh help
+Warewulf command line shell interface
+
+Welcome to the Warewulf shell interface. This application allows you
+to interact with the Warewulf backend database and modules via a
+single interface.
+
+  bootstrap        Manage your bootstrap images
+  dhcp             Manage DHCP service and configuration
+  events           Control how events are handled
+  exit             Exit/leave the Warewulf shell
+  file             Manage files within the Warewulf data store
+  ipmi             Node IPMI configuration
+  mic              Intel(R) Xeon Phi(TM) manipulation commands
+  node             Node manipulation commands
+  object           Generically manipulate all Warewulf data store entries
+  output           Set the output verbosity level
+  provision        Node provision manipulation commands
+  pxe              Manage PXE configuration
+  quit             Exit/leave the Warewulf shell
+  ssh              Spawn parallel ssh connections to nodes.
+  vnfs             Manage your VNFS images
+
+[root@redplanet ~]# 
