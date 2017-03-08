@@ -54,4 +54,9 @@ wwsh provision set -l=group mygroup hello group123
 wwsh provision set n00[0-4] --console=ttyS1,57600 --kargs="noacpi"
 wwsh provision list n00[00-99]
 
+wwsh vnfs [ import | export | delete | list | set ]
+
+wwsh vnfs import /path/to/name.vnfs --name=vnfs1
+wwsh vnfs export vnfs1 vnfs2 /tmp/exported_vnfs/
+wwsh vnfs list
 ```
