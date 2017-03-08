@@ -43,7 +43,7 @@ wwsh node set --enabled=false n0000
 wwsh object [ modify | print | delete | dump | canonicalize ]
 
 wwsh object print -p :all
-Wwsh object print -p _id,name,_type
+wwsh object print -p _id,name,_type
 
 wwsh provision [ set | list | print ]
 
